@@ -4,6 +4,10 @@ cast()
 Sleep 2000
 ControlSend, , q, MortalGame
 }
+changeToCast()
+{
+ControlSend, , 3, MortalGame
+}
 rest()
 {
 Sleep 1000
@@ -11,25 +15,22 @@ ControlSend, , 4, MortalGame
 }
 eat()
 {
-	Sleep 1000
-	ControlSend, , 5, MortalGame
+Sleep 1000
+ControlSend, , 5, MortalGame
 }
-stopeating()
+stopeat()
 {
-	Sleep 1000
-	ControlSend, , w, MortalGame
+Sleep 1000
+ControlSend, , w, MortalGame
 }
-changeToCast()
-{
-ControlSend, , 3, MortalGame
-}
+
 
 ;MAIN LOOP, CLICK INSERT TO START==================================================
 Insert::
 
 ;variables
 numberofcasts = 45 ;SET HOW MANY TIMES SPURT WILL CAST
-resttime = 20000 ;SET HOW LONG YOU WILL REST
+resttime = 25000 ;SET HOW LONG YOU WILL REST
 
 Loop
 {
@@ -44,8 +45,16 @@ Loop
 		rest()
 	}
 	eat()
+	sleep 500
+	eat()
+	sleep 500
+	eat()
 	sleep 6000
-	stopeating()
+	stopeat()
+	sleep 500
+	stopeat()
+	sleep 500
+	stopeat()
 }
 
 Delete::ExitApp ; exits autohotkey on Delete
