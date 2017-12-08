@@ -15,7 +15,7 @@ Insert::
 SoundPlay, audio/switch_on.wav
 ;variables
 numberofcasts = 45 ;SET HOW MANY TIMES SPURT WILL CAST
-punchtime = 1100 ;SET THE TIME BETWEEN PUNCHES
+punchtime = 1200 ;SET THE TIME BETWEEN PUNCHES
 resttime = 1000 ;SET HOW LONG YOU WILL REGEN STAM
 
 Loop
@@ -24,11 +24,7 @@ Loop
 	{
 		sleep %punchtime%
 		cast()
-		SoundPlay, sfx_switch_on.wav
 	}
-	rest()
-	sleep %resttime%
-	rest()
 }
 
 Delete::

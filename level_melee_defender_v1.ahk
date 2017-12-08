@@ -1,16 +1,32 @@
-WinWait, MortalGame, 
-IfWinNotActive, MortalGame, , WinActivate, MortalGame, 
-WinWaitActive, MortalGame, 
-
-while 1 = 1{
-sleep 10000
+;FUNCTIONS=========================================================================
+cast()
+{
+Sleep 100
+ControlClick, , MortalGame, , Right
+}
+rest()
+{
+Sleep 1000
+ControlSend, , 4, MortalGame
 }
 
+;MAIN LOOP, CLICK INSERT TO START==================================================
 Insert::
-SoundPlay, sfx_switch_on.wav
-Click Down Right
-sleep 9000000000000
+SoundPlay, audio/switch_on.wav
+;variables
+numberofcasts = 45 ;SET HOW MANY TIMES SPURT WILL CAST
+punchtime = 1200 ;SET THE TIME BETWEEN PUNCHES
+resttime = 1000 ;SET HOW LONG YOU WILL REGEN STAM
 
-Delete::exitapp ; in case of emergency hit escape key
+Loop
+{
+	Loop %numberofcasts%
+	{
+		sleep %punchtime%
+		cast()
+	}
+}
 
-
+Delete::
+SoundPlay, audio/switch_on.wav
+ExitApp ; exits autohotkey on Delete
