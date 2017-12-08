@@ -27,7 +27,7 @@ ControlSend, , w, MortalGame
 
 ;MAIN LOOP, CLICK INSERT TO START==================================================
 Insert::
-
+SoundPlay, audio/switch_on.wav
 ;variables
 numberofcasts = 45 ;SET HOW MANY TIMES SPURT WILL CAST
 resttime = 25000 ;SET HOW LONG YOU WILL REST
@@ -57,4 +57,6 @@ Loop
 	stopeat()
 }
 
-Delete::ExitApp ; exits autohotkey on Delete
+Delete::
+SoundPlay, audio/switch_on.wav
+ExitApp ; exits autohotkey on Delete
